@@ -132,6 +132,12 @@ public class MainActivity extends FragmentActivity {
                 return str;
             }
 
+            noServiceIndex = tmp.indexOf("No arrival times");
+            if (noServiceIndex > 0) {
+                str += "\nNo service info right now.\nTry again in a couple mins.";
+                return str;
+            }
+
             int timeIndex;
             if (str.trim().equals("HOBOKEN TERMINAL")) {
                 timeIndex = tmp.indexOf("To 89 NORTH BERGEN") + 49;
